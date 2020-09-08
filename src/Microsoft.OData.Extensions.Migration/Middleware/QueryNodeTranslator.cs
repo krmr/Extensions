@@ -123,6 +123,7 @@ namespace Microsoft.OData.Extensions.Migration
                 { v => v is Guid, v => nodeIn.Value.ToString() },
                 { v => v is Int64, v => nodeIn.Value.ToString() },
                 { v => v is DateTime, v => ((DateTime)nodeIn.Value).ToString("s", CultureInfo.InvariantCulture) },
+                { v => v is DateTimeOffset, v => ((DateTimeOffset)nodeIn.Value).UtcDateTime.ToString("yyyy'-'MM'-'dd'T'HH':'mm':'ssK", CultureInfo.InvariantCulture) },
                 { v => true, v => nodeIn.LiteralText }
             };
 

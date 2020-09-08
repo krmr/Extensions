@@ -97,6 +97,7 @@
         <Property Name="ID" Type="Edm.Guid" Nullable="false" />
         <Property Name="Name" Type="Edm.String" />
         <Property Name="AirDate" Type="Edm.DateTime" Nullable="false" />
+        <Property Name="Updated" Type="Edm.DateTimeOffset" Nullable="false" />
         <NavigationProperty Name="FeaturedProduct" Relationship="ODataDemo.FeaturedProduct_Advertisement_Advertisement_FeaturedProduct" ToRole="FeaturedProduct_Advertisement" FromRole="Advertisement_FeaturedProduct" />
       </EntityType>
       <Association Name="Product_Categories_Category_Products">

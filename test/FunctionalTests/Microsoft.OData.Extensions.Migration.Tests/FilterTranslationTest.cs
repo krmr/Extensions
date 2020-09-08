@@ -46,6 +46,7 @@ namespace Microsoft.OData.Extensions.Migration.Tests
                     { new object[] { "Advertisements?$filter=AirDate eq datetime'1995-09-01T00:10:00Z'", "Advertisements?$filter=AirDate eq 1995-09-01T00:10:00" } }, // DateTime value translation
                     // TODO: Ask Sam where this needs to change so that we dont change have the timezone add 9hrs
                   //  { new object[] { "Advertisements?$filter=AirDate eq datetime'1995-09-01T00:10:00.0000230-06:00'", "Advertisements?$filter=AirDate eq 1995-09-01T09:10:00"  } }, // DataTime value translation: milliseconds should be stripped off
+                    { new object[] { "Advertisements?$filter=Updated ge datetimeoffset'1995-09-01T00:10:00Z'", "Advertisements?$filter=Updated ge 1995-09-01T00:10:00Z" } }, // DateTimeOffset value translation
                     { new object[] { "Products?$filter=startswith(Name,'n') eq true", "IS_SAME" } }, // Canonical function "startswith" should remain the same
                     { new object[] { "Products?$filter=startswith(Name,             'n') eq true", "Products?$filter=startswith(Name,'n') eq true" } }, // the white spaces in a function should be removed
                     { new object[] { "Advertisements?$filter=day(AirDate) eq 3", "IS_SAME" } }, // Canonical function "day" should remain the same
